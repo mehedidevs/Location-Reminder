@@ -3,19 +3,18 @@ package com.mehedi.mylocationreminder.locationreminders.reminderslist
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.udacity.project4.base.BaseViewModel
 import com.mehedi.mylocationreminder.locationreminders.data.ReminderDataSource
-import com.mehedi.mylocationreminder.locationreminders.data.dto.ReminderDTO
 import com.mehedi.mylocationreminder.locationreminders.data.dto.Result
+import com.mehedi.mylocationreminder.base.BaseViewModel
 import kotlinx.coroutines.launch
 
 class RemindersListViewModel(
     app: Application,
     private val dataSource: ReminderDataSource
 ) : BaseViewModel(app) {
-    // list that holds the reminder data to be displayed on the UI
+    
     val remindersList = MutableLiveData<List<ReminderDataItem>>()
-
+    
     /**
      * Get all the reminders from the DataSource and add them to the remindersList to be shown on the UI,
      * or show error if any
@@ -27,9 +26,9 @@ class RemindersListViewModel(
             val result = dataSource.getReminders()
             showLoading.postValue(false)
             when (result) {
-                is Result.Success<*> -> {
+                is Result.Success -> {
                     val dataList = ArrayList<ReminderDataItem>()
-                    dataList.addAll((result.data as List<ReminderDTO>).map { reminder ->
+                    dataList.addAll(result.data.map { reminder ->
                         //map the reminder data from the DB to the be ready to be displayed on the UI
                         ReminderDataItem(
                             reminder.title,
@@ -42,15 +41,16 @@ class RemindersListViewModel(
                     })
                     remindersList.value = dataList
                 }
+                
                 is Result.Error ->
                     showSnackBar.value = result.message
             }
-
+            
             //check if no data has to be shown
             invalidateShowNoData()
         }
     }
-
+    
     /**
      * Inform the user that there's not any data if the remindersList is empty
      */

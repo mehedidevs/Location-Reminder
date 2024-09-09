@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.maps.model.PointOfInterest
 import com.mehedi.mylocationreminder.R
-import com.udacity.project4.base.BaseViewModel
+import com.mehedi.mylocationreminder.base.BaseViewModel
 import com.udacity.project4.base.NavigationCommand
 import com.mehedi.mylocationreminder.locationreminders.data.ReminderDataSource
 import com.mehedi.mylocationreminder.locationreminders.data.dto.ReminderDTO
