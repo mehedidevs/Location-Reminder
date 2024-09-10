@@ -25,6 +25,7 @@ import com.udacity.project4.utils.setDisplayHomeAsUpEnabled
 import com.udacity.project4.base.NavigationCommand
 import com.udacity.project4.locationreminders.reminderslist.ReminderDataItem
 import org.koin.android.ext.android.inject
+import com.udacity.project4.R
 
 private const val ACTION_GEOFENCE_EVENT =
     "SaveReminderFragment.project4.action.ACTION_GEOFENCE_EVENT"
