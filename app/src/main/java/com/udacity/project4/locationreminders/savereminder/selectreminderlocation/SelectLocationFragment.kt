@@ -33,12 +33,12 @@ import com.udacity.project4.utils.setDisplayHomeAsUpEnabled
 import org.koin.android.ext.android.inject
 import java.util.Locale
 
-private val REQUEST_LOCATION_PERMISSION = 1
-private val DEFAULT_COORDINATES = LatLng(23.8041, 90.4152)
+
 
 class SelectLocationFragment : BaseFragment(), OnMapReadyCallback {
     override val _viewModel: SaveReminderViewModel by inject()
-
+    private val REQUEST_LOCATION_PERMISSION = 1
+    private val DEFAULT_COORDINATES = LatLng(23.8041, 90.4152)
     private lateinit var binding: FragmentSelectLocationBinding
     private lateinit var map: GoogleMap
     
