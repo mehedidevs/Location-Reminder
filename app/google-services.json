@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "55962071402",
+    "firebase_url": "https://letschat-35170-default-rtdb.firebaseio.com",
+    "project_id": "letschat-35170",
+    "storage_bucket": "letschat-35170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55962071402:android:5092ee66d2eec6c6667513",
+        "android_client_info": {
+          "package_name": "com.gowtham.letschat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55962071402-tuap71tgkg45ol386bb3kfcun8r0nck7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXIV-7jwQ71Q4ITL93UCLOcwX7nSS7ofw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55962071402-4a58mp6ploe3uiq9pm1767504j45ej3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55962071402:android:66ff262f19b765ed667513",
+        "android_client_info": {
+          "package_name": "com.mehedi.mylocationreminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55962071402-tuap71tgkg45ol386bb3kfcun8r0nck7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXIV-7jwQ71Q4ITL93UCLOcwX7nSS7ofw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55962071402-4a58mp6ploe3uiq9pm1767504j45ej3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55962071402:android:d3b70a066a98b3a0667513",
+        "android_client_info": {
+          "package_name": "com.tscore.sports.notificationtst"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55962071402-tuap71tgkg45ol386bb3kfcun8r0nck7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXIV-7jwQ71Q4ITL93UCLOcwX7nSS7ofw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55962071402-4a58mp6ploe3uiq9pm1767504j45ej3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55962071402:android:5157ff405b30adcd667513",
+        "android_client_info": {
+          "package_name": "com.udacity.project4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55962071402-tuap71tgkg45ol386bb3kfcun8r0nck7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXIV-7jwQ71Q4ITL93UCLOcwX7nSS7ofw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55962071402-4a58mp6ploe3uiq9pm1767504j45ej3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
