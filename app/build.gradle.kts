@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.mehedi.mylocationreminder"
+    namespace = "com.udacity.project4"
     compileSdk = 34
     
     defaultConfig {
-        applicationId = "com.mehedi.mylocationreminder"
+        applicationId = "com.udacity.project4"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
