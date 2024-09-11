@@ -122,5 +122,10 @@ dependencies {
     androidTestImplementation("org.mockito:mockito-core:5.4.0")
     androidTestImplementation("com.linkedin.dexmaker:dexmaker-mockito:2.28.3")
     
+    val work_version = "2.9.1"
+    
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:$work_version")
+    
     
 }

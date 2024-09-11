@@ -9,8 +9,12 @@ import com.udacity.project4.locationreminders.reminderslist.RemindersListViewMod
 import com.udacity.project4.locationreminders.reminderslist.toReminderDTO
 import com.udacity.project4.savereminder.getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runBlockingTest
-import org.junit.*
+import kotlinx.coroutines.test.runTest
+import org.junit.After
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.core.context.stopKoin
 
@@ -20,10 +24,10 @@ class RemindersListViewModelTest {
     // Executes each task synchronously using Architecture Components.
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
-
+    
     private lateinit var remindersListViewModel: RemindersListViewModel
     private lateinit var fakeReminderDataSource: FakeDataSource
-
+    
     @Before
     fun setupReminderListViewModel() {
         fakeReminderDataSource = FakeDataSource()
@@ -32,43 +36,50 @@ class RemindersListViewModelTest {
             fakeReminderDataSource
         )
     }
+    
 
+    
     @Test
     fun loadReminders_givenErrorResult_showsSnackBarErrorMessage() =
-        runBlockingTest {
+        runTest {
             val message = "Error message"
             fakeReminderDataSource.errorMessage = message
-
+            
             remindersListViewModel.loadReminders()
-
+            
             Assert.assertEquals(message, remindersListViewModel.showSnackBar.getOrAwaitValue())
         }
-
+    
     @Test
     fun loadReminders_givenValidForm_showsReminderList() =
-        runBlockingTest {
+        runTest {
             val reminder1 = ReminderDataItem(
                 "Title todo1",
                 "Description todo1",
                 "Location todo1",
                 50.0,
-                50.0)
-
+                50.0
+            )
+            
             val reminder2 = ReminderDataItem(
                 "Title todo2",
                 "Description todo2",
                 "Location todo2",
                 50.0,
-                50.0)
-
+                50.0
+            )
+            
             fakeReminderDataSource.saveReminder(reminder1.toReminderDTO())
             fakeReminderDataSource.saveReminder(reminder2.toReminderDTO())
-
+            
             remindersListViewModel.loadReminders()
-
-            Assert.assertEquals(listOf(reminder1,reminder2),remindersListViewModel.remindersList.getOrAwaitValue())
+            
+            Assert.assertEquals(
+                listOf(reminder1, reminder2),
+                remindersListViewModel.remindersList.getOrAwaitValue()
+            )
         }
-
+    
     @After
     fun tearDown() {
         stopKoin()

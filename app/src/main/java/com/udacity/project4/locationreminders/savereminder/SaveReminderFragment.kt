@@ -16,16 +16,21 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import com.google.android.gms.common.api.ResolvableApiException
-import com.google.android.gms.location.*
+import com.google.android.gms.location.Geofence
+import com.google.android.gms.location.GeofencingClient
+import com.google.android.gms.location.GeofencingRequest
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.LocationSettingsRequest
 import com.google.android.material.snackbar.Snackbar
+import com.udacity.project4.R
 import com.udacity.project4.base.BaseFragment
+import com.udacity.project4.base.NavigationCommand
 import com.udacity.project4.databinding.FragmentSaveReminderBinding
 import com.udacity.project4.locationreminders.geofence.GeofenceBroadcastReceiver
-import com.udacity.project4.utils.setDisplayHomeAsUpEnabled
-import com.udacity.project4.base.NavigationCommand
 import com.udacity.project4.locationreminders.reminderslist.ReminderDataItem
+import com.udacity.project4.utils.setDisplayHomeAsUpEnabled
 import org.koin.android.ext.android.inject
-import com.udacity.project4.R
 
 private const val ACTION_GEOFENCE_EVENT =
     "SaveReminderFragment.project4.action.ACTION_GEOFENCE_EVENT"
@@ -47,7 +52,7 @@ class SaveReminderFragment : BaseFragment() {
             requireContext(),
             0,
             intent,
-            PendingIntent.FLAG_UPDATE_CURRENT  or PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
     }
     
@@ -219,6 +224,13 @@ class SaveReminderFragment : BaseFragment() {
             }
         }
         _viewModel.onClear()
+    }
+    
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_LOCATION_ON) {
+            checkDeviceLocationSettingsAndStartGeofence(false)
+        }
     }
     
     override fun onRequestPermissionsResult(

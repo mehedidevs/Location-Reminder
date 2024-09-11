@@ -26,6 +26,15 @@ class AuthenticationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authentication)
         
+        FirebaseAuth.getInstance().currentUser.let {
+            if (it != null){
+                startActivity(Intent(this, RemindersActivity::class.java))
+                finish()
+            }
+            
+            
+        }
+        
         loginButton = findViewById(R.id.login_button)
         loginButton.setOnClickListener {
             firebaseSignIn()
